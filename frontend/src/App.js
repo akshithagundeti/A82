@@ -14,7 +14,7 @@ import Reports from './components/Reports/Reports';
 import Summary from './components/Summary/Summary';
 
 export const FRONTEND_BASE_URL = `http://localhost:8080`;
-export const BASE_URL = `http://localhost:3000/api`;
+export const BASE_URL = `http://localhost:3000`;
 
 function App() {
     const [isLoggedIn, setIsLoggedIn] = useState(false);
