@@ -1,0 +1,19 @@
+.reports-content {
+    padding: 20px;
+  }
+  
+  .charts-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+  }
+  
+  .chart-container {
+    width: 45%; /* Adjust width to control the size */
+    height: 300px; /* Less height for the charts */
+  }
+  
+  .chart-container canvas {
+    max-height: 100%;
+  }
+  

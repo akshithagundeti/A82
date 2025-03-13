@@ -1,0 +1,98 @@
+/* Full-page container with animated background */
+.login-form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background: transparent;
+    background-image: linear-gradient(45deg, #f06, #4e9, #08f, #fc3);
+    background-size: 400% 400%; /* Size of the gradient */
+    animation: gradientMove 10s ease infinite; /* Animation to move the background */
+    position: relative; /* Ensure form stays on top */
+  }
+  
+  /* Styles for the login form */
+  .login-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent white background */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Form group styling */
+  .login-form .form-group {
+    margin-bottom: 15px;
+  }
+  
+  /* Input fields styling */
+  .login-form input {
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    margin-top: 5px;
+  }
+  
+  .login-form input.error {
+    border-color: red;
+  }
+  
+  /* Error message styling */
+  .login-form .error-text {
+    color: red;
+    font-size: 12px;
+    margin-top: 5px;
+  }
+  
+  /* Submit button styling */
+  .login-form .login-button {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .login-form .login-button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Horizontal rule styling */
+  .login-form hr {
+    margin: 10px 0;
+  }
+  
+  /* Link styling */
+  .login-form div {
+    text-align: center;
+  }
+  
+  .login-form a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .login-form a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Gradient animation for moving background */
+  @keyframes gradientMove {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  

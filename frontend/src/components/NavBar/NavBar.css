@@ -1,0 +1,95 @@
+.navbar {
+    background-color: #333;
+    color: #fff;
+    padding: 5px 0; /* Adjusted height */
+  }
+  
+  .navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+  
+  .navbar-logo {
+    font-size: 2.5rem;
+    background-size: cover;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color:  transparent;
+    display: flex;
+    align-items: center; /* Align image and text vertically */
+    color: transparent;
+  }
+
+  .navbar-logo-img {
+    width: 40px; /* Set width of the image */
+    height: auto; /* Maintain aspect ratio */
+    margin-right: 10px; /* Add some space between the image and the title */
+  }
+  
+  
+  .navbar-menu {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  
+  .navbar-items {
+    list-style: none;
+    display: flex;
+  }
+  
+  .navbar-item {
+    margin: 0 10px;
+  }
+  
+  .navbar-item a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .navbar-toggle {
+    display: none;
+    cursor: pointer;
+  }
+  
+  @media screen and (max-width: 768px) {
+    .navbar-menu {
+      display: none;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: #333;
+      width: 100%;
+      padding: 10px 20px; /* Adjusted padding */
+      box-sizing: border-box;
+    }
+  
+    .navbar-menu.active {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Align menu items to the start */
+    }
+  
+    .navbar-toggle {
+      display: block;
+    }
+    
+    .fas {
+      font-size: 1.5rem;
+    }
+  
+    .navbar-item {
+      margin: 10px 0; /* Adjusted margin for mobile */
+    }
+  }
+
+
+/* Add styles for active navbar items */
+.navbar-item.active a {
+  color: #ffcc00; /* Change color for active items */
+  text-decoration: underline; /* Add underline for active items */
+}

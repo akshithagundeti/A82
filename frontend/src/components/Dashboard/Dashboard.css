@@ -1,0 +1,83 @@
+/* Apply a moving rainbow gradient background to the dashboard */
+.dashboard-container {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    max-width: 100%;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    background: linear-gradient(45deg, 
+        #ff0000, #ff9900, #33cc33, #3399ff, #9933cc, #ff3399, #ffcc00);
+    background-size: 600% 600%; /* Ensure smooth movement of the gradient */
+    animation: rainbowBackground 10s ease infinite;
+    height: 100vh; /* Ensure the background covers the full viewport height */
+}
+
+/* Add moving rainbow background animation */
+@keyframes rainbowBackground {
+    0% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    font-size: 1.8rem;
+    color: #34495e;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.summary p,
+.technical-aspects p {
+    font-size: 1.1rem;
+    color: #7f8c8d;
+    line-height: 1.6;
+}
+
+.summary a {
+    color: #2980b9;
+    text-decoration: none;
+}
+
+.summary a:hover {
+    text-decoration: underline;
+}
+
+.technical-aspects p {
+    margin-top: 20px;
+    color: #7f8c8d;
+}
+
+/* Add subtle shadow to the summary and technical sections */
+.summary, .technical-aspects {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.summary {
+    font-size: 1.1rem;
+}
+
+.technical-aspects {
+    margin-top: 30px;
+}
+
+/* Ensure the content has a fixed background layer */
+.dashboard-content {
+    position: relative;
+    z-index: 2; /* Place content above the background animation */
+}
