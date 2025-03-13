@@ -235,8 +235,8 @@ function Summary({ onLogout }) {
 
                 {/* Dropdown for team selection */}
                 <div className="team-selection">
-                    <label>Select Team: </label>
-                    <select onChange={handleTeamChange} value={selectedTeam}>
+                    <label for="team-select" id="team-select-label">Select Team: </label>
+                    <select id="team-select" onChange={handleTeamChange} value={selectedTeam} aria-labelledby="team-select-label" aria-describedby="team-select-description">
                         <option value="all">All Teams</option>
                         <option value="Charlotte">Charlotte</option>
                         <option value="Gardner Webb">Gardner Webb</option>
@@ -245,18 +245,18 @@ function Summary({ onLogout }) {
 
                 {/* Line Chart */}
                 <div className="chart-container">
-                    <h3>Line Chart: Player Stats Comparison</h3>
-                    <Line data={lineChartProcessedData} options={lineChartOptions} />
-                    <p>
+                    <h3 id="line-chart-title">Line Chart: Player Stats Comparison</h3>
+                    <Line data={lineChartProcessedData} options={lineChartOptions} aria-labelledby="line-chart-title"/>
+                    <p aria-describedby="line-chart-description" id="line-chart-description">
                         The Line Chart compares individual player statistics (Goals, Assists, and Points) across different teams, providing a detailed view of player performance. The X-axis of the chart represents players, with their names displayed along with their respective team names for clarity. The Y-axis shows the values for each stat—goals, assists, and points—allowing easy comparison between players. Each stat is represented by a different colored line (red for goals, blue for assists, and green for points), helping to track how each player performs in each category. This chart is particularly useful for analyzing the contribution of individual players over time and understanding how their performance stacks up against other players in the league.
                     </p>
                 </div>
 
                 {/* Bar Chart */}
                 <div className="chart-container">
-                    <h3>Bar Chart: Team Stats Comparison</h3>
-                    <Bar data={barChartData} options={barChartOptions} />
-                    <p>
+                    <h3 id="bar-chart-title">Bar Chart: Team Stats Comparison</h3>
+                    <Bar data={barChartData} options={barChartOptions}  aria-labelledby="bar-chart-title" />
+                    <p aria-describedby="bar-chart-description" >
                         The Bar Chart, on the other hand, offers a high-level comparison of team performance by aggregating statistics such as total goals, assists, and points for each team. The X-axis represents the teams, while the Y-axis shows the total accumulated statistics for each team. Each stat is displayed as a bar, with red bars representing total goals, blue bars representing total assists, and green bars representing total points. This chart provides a quick overview of how each team is performing collectively, highlighting which teams are excelling in areas such as scoring, playmaking, and overall offensive contribution. It’s valuable for comparing teams against each other and understanding which teams are leading in terms of total performance. Together, these charts offer both individual player insights and team-wide comparisons, allowing coaches, analysts, and fans to assess player and team performance comprehensively.
                     </p>
                 </div>

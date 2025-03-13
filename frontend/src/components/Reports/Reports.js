@@ -174,6 +174,7 @@ function Reports({onLogout}) {
               <Pie
                 data={unccPieData}
                 options={pieChartOptions}
+                aria-labelledby="uncc-pie-chart-title"
               />
               <p>
                 This pie chart shows the distribution of goals scored by each player in the UNCC team.
@@ -186,6 +187,7 @@ function Reports({onLogout}) {
             <div className="chart-container" style={{ width: '48%' }}>
               <h3>Gardner Webb Team Goals Distribution</h3>
               <Pie
+                aria-labelledby="gw-pie-chart-title"
                 data={gwPieData}
                 options={pieChartOptions}
               />

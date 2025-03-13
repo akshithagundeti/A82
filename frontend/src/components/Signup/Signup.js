@@ -111,7 +111,7 @@ const Signup = ({onLoginOrSignup}) => {
         <div>
             <NavBar/>
         <div className="signup-form-container">
-        <form className="signup-form" onSubmit={handleSubmit}>
+        <form className="signup-form" onSubmit={handleSubmit} aria-labelledby="signup-form-title">
             <div>Sign up</div>
             <hr />
             
@@ -123,6 +123,7 @@ const Signup = ({onLoginOrSignup}) => {
                 onChange={handleChange}
                 placeholder="Name"
                 className={errors.name ? 'error signup-form' : 'signup-form'}
+                aria-describedby="name-error"
                 aria-label="Name"
                 required
             />
@@ -137,6 +138,7 @@ const Signup = ({onLoginOrSignup}) => {
                 onChange={handleChange}
                 placeholder="Email"
                 className={errors.email ? 'error signup-form' : 'signup-form'}
+                aria-describedby="email-error"
                 aria-label="Email"
                 required
             />
@@ -151,6 +153,7 @@ const Signup = ({onLoginOrSignup}) => {
                 onChange={handleChange}
                 placeholder="Password"
                 className={errors.password ? 'error signup-form' : 'signup-form'}
+                aria-describedby="password-error"
                 aria-label="Password"
                 required
             />
@@ -165,6 +168,7 @@ const Signup = ({onLoginOrSignup}) => {
                 onChange={handleChange}
                 placeholder="Confirm Password"
                 className={errors.confirmPassword ? 'error signup-form' : 'signup-form'}
+                aria-describedby="confirm-password-error"
                 aria-label="Confirm Password"
                 required
             />
@@ -179,6 +183,7 @@ const Signup = ({onLoginOrSignup}) => {
                 onChange={handleChange}
                 placeholder="Phone Number"
                 className={errors.phoneNumber ? 'error signup-form' : 'signup-form'}
+                aria-describedby="phone-number-error"
                 aria-label="Phone Number"
                 required
             />
@@ -190,7 +195,7 @@ const Signup = ({onLoginOrSignup}) => {
             </div>
 
             <div>
-            Already have an account? <Link to="/login" role="menuitem">Login</Link>
+            Already have an account? <Link to="/login" role="menuitem" aria-label="Go to login page">Login</Link>
             </div>
         </form>
         </div>

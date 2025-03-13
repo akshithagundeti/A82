@@ -30,22 +30,22 @@ const NavBar = ({onLogout}) => {
     return (
         <nav className="navbar" aria-label="Main Navigation">
         <div className="navbar-container">
-            <div className="navbar-logo" style={{cursor:'pointer'}}>
+            <div className="navbar-logo" style={{cursor:'pointer'}} role="img" aria-label="UNCC Logo">
                 <img src="uncc.png" alt="Logo" className="navbar-logo-img"/>
                 <span style={{color:'white'}}>UNCC</span>
             </div>
             <div className={isOpen ? 'navbar-menu active' : 'navbar-menu'} aria-expanded={isOpen}>
             <ul className="navbar-items" role="menubar">
-                <li role="none" className={`navbar-item ${location.pathname === '/dashboard' ? 'active' : ''} ${location.pathname === '/' ? 'active' : ''}`}><Link to="/dashboard" role="menuitem" onClick={() => navigateTo('/dashboard')}>Home</Link></li>
-                <li role="none" className={`navbar-item ${location.pathname === '/summary' ? 'active' : ''}`}><Link to="/summary" role="menuitem" onClick={() => navigateTo('/summary')}>Summary</Link></li>
-                <li role="none" className={`navbar-item ${location.pathname === '/reports' ? 'active' : ''}`}><Link to="/reports" role="menuitem" onClick={() => navigateTo('/reports')}>Reports</Link></li>
+                <li role="none" className={`navbar-item ${location.pathname === '/dashboard' ? 'active' : ''} ${location.pathname === '/' ? 'active' : ''}`}><Link to="/dashboard" role="menuitem" aria-current={location.pathname === '/dashboard' ? 'page' : undefined}  onClick={() => navigateTo('/dashboard')}>Home</Link></li>
+                <li role="none" className={`navbar-item ${location.pathname === '/summary' ? 'active' : ''}`}><Link to="/summary" role="menuitem" aria-current={location.pathname === '/summary' ? 'page' : undefined}  onClick={() => navigateTo('/summary')}>Summary</Link></li>
+                <li role="none" className={`navbar-item ${location.pathname === '/reports' ? 'active' : ''}`}><Link to="/reports" role="menuitem" aria-current={location.pathname === '/reports' ? 'page' : undefined}  onClick={() => navigateTo('/reports')}>Reports</Link></li>
                 {token ? 
                 <li role="none" className="navbar-item" onClick={handleLogout}><Link to="/login" role="menuitem">Logout</Link></li>
                 : <li></li>
                 }
             </ul>
             </div>
-            <div className="navbar-toggle" onClick={toggleMenu} role="button" aria-label="Toggle Menu">
+            <div className="navbar-toggle" onClick={toggleMenu} role="button" aria-label="Toggle Menu" aria-expanded={isOpen}>
             <i className={isOpen ? 'fas fa-times' : 'fas fa-bars'}></i>
             </div>
         </div>

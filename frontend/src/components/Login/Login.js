@@ -79,7 +79,7 @@ const Login = ({onLoginOrSignup}) => {
     <div>
       <NavBar/>
       <div className="login-form-container">
-        <form className="login-form" onSubmit={handleSubmit}>
+        <form className="login-form" onSubmit={handleSubmit} aria-labelledby="login-form-heading">
           <div>Login</div>
           <hr />
           
@@ -91,9 +91,10 @@ const Login = ({onLoginOrSignup}) => {
               onChange={handleChange}
               placeholder="Email"
               className={errors.email ? 'error login-form' : 'login-form'}
-              aria-label="Email"
+              aria-describedby="email-error"
+              aria-invalid={errors.email ? 'true' : 'false'}
             />
-            {errors.email && <p className="error-text">{errors.email}</p>}
+            {errors.email && <p className="error-text" role="alert">{errors.email}</p>}
           </div>
 
           <div className="form-group">
@@ -104,16 +105,17 @@ const Login = ({onLoginOrSignup}) => {
               onChange={handleChange}
               placeholder="Password"
               className={errors.password ? 'error login-form' : 'login-form'}
-              aria-label="Password"
+              aria-describedby="password-error"
+              aria-invalid={errors.password ? 'true' : 'false'}
             />
-            {errors.password && <p className="error-text">{errors.password}</p>}
+            {errors.password && <p className="error-text" role="alert">{errors.password}</p>}
           </div>
           <div>
-              {errors.message && <p className='error-text'>{errors.message}</p>}
+              {errors.message && <p className='error-text' role="alert">{errors.message}</p>}
           </div>
 
           <div className="form-group">
-            <button type="submit" className="login-button">Login</button>
+            <button type="submit" className="login-button" aria-label="Submit login form">Login</button>
           </div>
 
           <div>
